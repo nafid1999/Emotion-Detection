@@ -1,0 +1,392 @@
+/*--------------- Start general rules ------ */
+:root {
+  --main-orange-color: #e0502c;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*--------------- End general rules ------ */
+body {
+  font-size: 16px;
+  font-family: "Lobster", cursive;
+  background-color: #2f3640;
+  color: #fff;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.back img {
+  max-width: 100%;
+}
+
+.back img:hover {
+  margin-left: 10px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #2f3640;
+  opacity: 0.85;
+}
+
+.content {
+  position: fixed;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  padding: 5vh 0;
+}
+
+.img-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.title {
+  margin: 10vh 0 12vh;
+}
+
+.title h1 {
+  font-size: 50px;
+}
+
+.desc {
+  margin: 6vh 0 12vh;
+}
+
+.desc h3 {
+  width: 65%;
+  line-height: 1.6;
+}
+
+.gobtn .btn {
+  padding: 10px 3vw;
+  background-color: #e0502c;
+}
+
+.gobtn .btn:hover {
+  border: 1px solid #ff3f10;
+}
+
+canvas {
+  display: none;
+}
+
+.vidoe-block video {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #e0502c;
+  -webkit-box-shadow: 0px 0px 2px 2px #f87351;
+  box-shadow: 0px 0px 2px 2px #f87351;
+  border-radius: 10px;
+}
+
+.wait {
+  margin: 2vh 0;
+  text-align: center;
+}
+
+/*---------Start emotion page  ---*/
+.emotion-page {
+  padding: 2vh 0;
+}
+
+.emotion-page .para {
+  display: block;
+  width: 65%;
+  margin: 30px auto;
+}
+
+.emotion-page .para .title-para {
+  font-size: 24px;
+}
+
+.emotion-page .para p {
+  line-height: 2;
+}
+
+.emotion-page .quets-audio {
+  margin: 70px 0;
+}
+
+.emotion-page .quotes ul li {
+  line-height: 4;
+}
+
+.emotion-page .motiv-vidoe {
+  margin: 35px 0;
+}
+
+.emotion-page .motiv-vidoe iframe {
+  width: 100%;
+  height: 70vh;
+}
+
+/*---------End emotion page  ---*/
+/* start custom */
+.player-container {
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#thumbnail {
+  -o-object-fit: fill;
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+  top: -10%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 3;
+}
+
+.box {
+  width: 100%;
+  z-index: 4;
+}
+
+.play-pause {
+  grid-area: one;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.fa-pause-circle {
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+  color: #e49a90 !important;
+}
+
+#play,
+#prev-track,
+#next-track,
+#back10,
+#forward10,
+#stop {
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.track-info {
+  text-align: center;
+}
+
+#track-artist {
+  color: #e0502c;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+#track-title {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+}
+
+.next-prev {
+  grid-area: three;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 85%;
+  margin: 25px auto 5px;
+}
+
+.next-prev i {
+  color: #fff;
+}
+
+.next-prev i:hover {
+  color: #f0715f;
+}
+
+.next-prev .fas {
+  color: #fff;
+}
+
+.progress-bar {
+  grid-area: four;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 35px;
+  background-color: #40739e;
+}
+
+#progressBar {
+  height: 5px;
+  background-color: #40739e;
+  width: 85%;
+  outline: none;
+  border-radius: 30px;
+}
+
+#progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 11px;
+  width: 11px;
+  outline: none;
+  background: #f94c57;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.track-time {
+  grid-area: five;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 85%;
+  margin: 10px auto;
+}
+
+#currentTime {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+
+#durationTime {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  color: #948ca5;
+}
+
+/* ---- qoutes */
+blockquote {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  padding: 20px 20px 20px 40px;
+  border-left: none;
+  position: relative;
+  text-indent: -19px;
+}
+
+section#block_content {
+  min-height: 400px;
+  padding-top: 40px;
+  text-align: left;
+}
+
+blockquote p {
+  font-size: 1em;
+}
+
+blockquote:before,
+blockquote:after {
+  font-family: Arial, serif;
+  font-size: 2.5em;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+blockquote:before {
+  content: open-quote;
+  margin-right: 4px;
+}
+
+blockquote:after {
+  content: close-quote;
+  margin-left: 3px;
+}
+
+blockquote.blockstyle,
+blockquote.style2 {
+  font-style: italic;
+}
+
+blockquote.blockstyle p,
+blockquote.style2 p {
+  display: inline;
+}
+
+blockquote.blockstyle {
+  border-left: 3px solid #f0715f;
+  position: relative;
+}
+
+blockquote.blockstyle > span.triangle:before {
+  text-indent: 0;
+  content: "\f0da";
+  font-family: FontAwesome;
+  color: #f0715f;
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  margin-top: -11px;
+  font-style: normal;
+}
+
+blockquote.blockstyle:before,
+blockquote.blockstyle:after {
+  color: #f0715f;
+}
+
+blockquote.blockstyle.border-color-blue {
+  border-color: #f21d01;
+}
+
+blockquote.blockstyle.border-color-blue > span.triangle:before {
+  color: #01b7f2;
+}
+
+blockquote.blockstyle.border-color-yellow {
+  border-color: #fdb714;
+}
+/*# sourceMappingURL=main.css.map */
